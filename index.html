@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --font-family: 'Hanken Grotesk';
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 31%, 51%);
+    }
+
+    body {
+      background: rgb(227, 246, 255);
+      margin: 0;
+      padding: 0;
+      font-family: 'Hanken Grotesk';
+    }
+
+    section {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+    }
+
+    .contain {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 500px;
+      width: 55%;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 4px 16px 0px rgba(128, 128, 128, 0.274);
+    }
+
+    .side1 {
+      margin: 0;
+      border-radius: 18px;
+      background: linear-gradient(to top, rgb(36, 0, 167), rgb(76, 0, 255));
+      height: 94%;
+      width: 46%;
+      padding: 15px;
+      text-align: center;
+    }
+
+    #title {
+      color: #d3d3d3;
+      font-size: 25px;
+      margin-bottom: 40px;
+    }
+
+    .circle {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(to top, rgb(36, 0, 167), rgb(76, 0, 255));
+      margin: auto;
+      padding: 2px;
+    }
+
+    #num {
+      font-size: 100px;
+      color: #fff;
+      margin-bottom: -50px;
+      margin-top: 25px;
+    }
+
+    h5 {
+      color: #d3d3d3;
+      font-size: 20px;
+    }
+
+    #remark {
+      font-size: 40px;
+      color: #fff;
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+
+    #text {
+      color: #d3d3d3;
+      font-size: 20px;
+      width: 85%;
+      margin: auto;
+    }
+
+    .side2 {
+      height: 100px;
+      width: 43%;
+      padding: 30px;
+      height: 95%;
+      width: 45%;
+    }
+
+    .grade1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 0, 0, 0.11);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      height: 65px;
+    }
+
+    .grade2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 166, 0, 0.11);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      height: 65px;
+    }
+
+    .grade3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 128, 0, 0.116);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      height: 65px;
+    }
+
+    .grade4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 255, 0.11);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      height: 65px;
+    }
+
+    #icon {
+      margin-right: 20px;
+    }
+
+    #mark1 {
+      margin-right: 100px;
+      color: rgba(255, 0, 0, 0.568);
+      font-size: 18px;
+      width: 80px;
+    }
+
+    #mark2 {
+      margin-right: 100px;
+      color: rgba(255, 166, 0, 0.568);
+      font-size: 18px;
+      width: 80px;
+    }
+
+    #mark3 {
+      margin-right: 100px;
+      color: rgba(0, 128, 0, 0.568);
+      font-size: 18px;
+      width: 80px;
+    }
+
+    #mark4 {
+      margin-right: 100px;
+      color: rgba(0, 0, 255, 0.568);
+      font-size: 18px;
+      width: 80px;
+    }
+
+    #rate {
+      font-size: 18px;
+    }
+
+    span {
+      color: gray;
+    }
+
+    .button {
+      border-radius: 30px;
+      width: 97%;
+      padding: 18px;
+      font-size: 16px;
+      margin: auto;
+      border: none;
+      outline: none;
+      margin-top: 8px;
+      background: rgb(0, 0, 22);
+      color: #fff;
+      cursor: pointer;
+      transition: 1s ease;
+    }
+
+    .button:hover {
+      transition: 1s ease-in-out;
+      background: linear-gradient(to top, rgb(36, 0, 167), rgb(76, 0, 255));
+    }
+
+    /* 760 screen */
+    @media screen and (max-width: 780px) {
+      body {
+        background: rgb(227, 246, 255);
+        margin: 0;
+        padding: 0;
+        font-family: 'Hanken Grotesk';
+      }
+
+      section {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+      }
+
+      .contain {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 500px;
+        width: 70%;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0px 4px 16px 0px rgba(128, 128, 128, 0.274);
+      }
+
+      .side1 {
+        width: 60%;
+      }
+
+      .circle {
+        width: 150px;
+        height: 150px;
+      }
+
+      #num {
+        font-size: 70px;
+        margin-bottom: -30px;
+      }
+
+      h5 {
+        font-size: 15px;
+      }
+
+      .side2 {
+        width: 45%;
+        padding: 15px;
+      }
+
+      #mark1,
+      #mark2,
+      #mark3,
+      #mark4 {
+        margin-right: 70px;
+        width: 10px;
+      }
+    }
+
+    /* 480 screen */
+
+    @media screen and (max-width: 600px) {
+      body {
+        background: #fff;
+        max-width: 100%;
+        padding: 0;
+        margin: auto;
+      }
+
+      .contain {
+        display: grid;
+        place-content: center;
+        box-shadow: none;
+        width: 100%;
+        margin: auto;
+        height: 100%;
+      }
+
+      .side1 {
+        margin-top: -40px;
+        width: 100%;
+        padding: 0px;
+        border-radius: 30px;
+        height: 520px;
+        z-index: 1;
+      }
+
+      #title {
+        margin-top: 70px;
+      }
+
+      #text {
+        margin-bottom: 80px;
+      }
+
+      .side2 {
+        width: 85%;
+        padding: 30px;
+        margin: auto;
+      }
+
+      #mark1,
+      #mark2,
+      #mark3,
+      #mark4 {
+        margin-right: 140px;
+      }
+
+    }
+
+    /* 320 screen */
+
+    @media screen and (max-width: 380px) {
+      body {
+        background: #fff;
+        max-width: 100%;
+        padding: 0;
+        margin: auto;
+      }
+
+      #mark1,
+      #mark2,
+      #mark3,
+      #mark4 {
+        margin-right: 120px;
+        width: 10px;
+      }
+
+      #icon {
+        margin-right: 10px;
+      }
+
+      .side2 {
+        width: 85%;
+        padding: 20px;
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section>
+    <div class="contain">
+      <div class="side1">
+        <h3 id="title">Your Result</h3>
+
+        <div class="circle">
+          <h2 id="num">76</h2>
+          <h5>of 100</h5>
+        </div>
+
+        <h3 id="remark">Great</h3>
+        <p id="text">You scored higher than 65% of the people who have
+          taken these tests.
+        </p>
+      </div>
+
+      <div class="side2">
+        <h2 id="top">Summary</h2>
+
+        <div class="grade1">
+          <img src="assets/images/icon-reaction.svg" id="icon">
+          <h4 id="mark1">Reaction</h4>
+          <h4 id="rate">80 <span> / 100</span></h4>
+        </div>
+
+        <div class="grade2">
+          <img src="assets/images/icon-memory.svg" id="icon">
+          <h4 id="mark2">Memory</h4>
+          <h4 id="rate">92 <span> / 100</span></h4>
+        </div>
+
+        <div class="grade3">
+          <img src="assets/images/icon-verbal.svg" id="icon">
+          <h4 id="mark3">Verbal</h4>
+          <h4 id="rate">61 <span> / 100</span></h4>
+        </div>
+
+        <div class="grade4">
+          <img src="assets/images/icon-visual.svg" id="icon">
+          <h4 id="mark4">Visual</h4>
+          <h4 id="rate">73 <span> / 100</span></h4>
+        </div>
+
+        <input type="submit" class="button" value="Continue">
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Ridds Tech</a>.
+    </div>
+  </section>
+
+
+</body>
+
+</html>
